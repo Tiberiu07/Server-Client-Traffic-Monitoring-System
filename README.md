@@ -1,18 +1,21 @@
-# Server-Client-Traffic-Monitoring-System
-Individual Project
-Descriere: Implementati un sistem care va fi capabil sa gestioneze traficul si sa ofere informatii virtuale soferilor. 
-Soferii vor putea de asemenea sa raporteze incidente din trafic spre sistem. 
-Apoi aceste update-uri vor fi trimise catre toti participantii la trafic. 
-Fiecare masina va trimite automat catre sistem informatii despre viteza cu care circula. 
-Apoi, sistemul va notifica fiecare sofer despre anumite restrictii de viteza ( eventual datorita unui blocaj in trafic) 
-De asemenea, fiecare sofer va putea sa se inscrie sa primeasca informatii despre vreme, evenimente sportive, preturi pentru combustibili la statiile peco. 
+# Server-Client Traffic Monitoring System
 
+A system that handles traffic activity. 
+System actors: a single server and multiple clients, acting as traffic participants.
 
+System functionalities:
 
-Actori: Un sistem server ce asteapta conexiuni. Mai multe conexiuni din partea de client.
+* sends data regarding maximum driving speed on a given street portion to all the connected clients 
+* sends data regarding weather, sport events, peco prices only to the subscribed traffic participants
+* a traffic participant announces an accident on a given street. The server is able to communicate the incident to all the connected clients
+* every minute, the clients will send data regarding their driving speed at a given moment in time. The server will update this particular information for all the clients.
 
-    Activitati:
-    trimite informatii dinspre server catre toti clientii despre : viteza cu care trebuie sa circule pe bucata respectiva de drum
-    trimite informatii dinspre server despre vreme, evenimente sportive, preturi pentru combustibili la statiile peco doar celor care au selectat aceste optiuni
-    un client anunta un accident pe Strada Lapusneanu 73, serverul inregistreaza mesajul, il trimite inapoi catre toti clientii
-    toti clientii vor trimite viteza cu care circula in acel moment ( cu o frecventa de 1 min se va face update la informatie )
+## Built With
+
+* C/C++
+* SQLite Database
+
+## Authors
+
+* **Gutu Tiberiu** 
+
